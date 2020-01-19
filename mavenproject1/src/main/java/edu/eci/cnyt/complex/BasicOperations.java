@@ -93,4 +93,16 @@ public class BasicOperations {
         numeroCNuevo = new Complex(valorPfea, Tetha);
         return numeroCNuevo;
     }
+     public static boolean iguales (Complex tupla1,Complex tupla2){
+        double r1 = tupla1.getReal();
+        double i1 = tupla1.getImaginary();
+        double r2 = tupla2.getReal();
+        double i2 = tupla2.getImaginary();
+        if (r2 == r1 && i1 == i2){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }

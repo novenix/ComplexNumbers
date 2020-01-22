@@ -4,19 +4,13 @@
  * and open the template in the editor.
  */
 
-/**
- *
- * @author 2137260
- */
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*; 
 import edu.eci.cnyt.complex.*;
 
 public class OperationTests {
+    public OperationTests(){
+    }
     
     @Test
     public void sumaTest(){

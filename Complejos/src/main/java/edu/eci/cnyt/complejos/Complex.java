@@ -1,4 +1,4 @@
-package edu.eci.cnyt.complex;
+package edu.eci.cnyt.complejos;
 import java.math.BigDecimal;
 
 public class Complex {

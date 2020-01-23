@@ -3,8 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.eci.cnyt.complex;
-import edu.eci.cnyt.complex.Complex;
+package edu.eci.cnyt.complejos;
+import edu.eci.cnyt.complejos.Complex;
 import java.math.BigDecimal;
 /**
  *

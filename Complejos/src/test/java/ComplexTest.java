@@ -4,15 +4,23 @@
  * and open the template in the editor.
  */
 
+import edu.eci.cnyt.complejos.BasicOperations;
+import edu.eci.cnyt.complejos.Complex;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*; 
-import edu.eci.cnyt.complex.*;
+import static org.junit.Assert.*;
 
-public class OperationTests {
-    public OperationTests(){
+/**
+ *
+ * @author nicolas.torres-p
+ */
+public class ComplexTest {
+    public ComplexTest(){
     }
-    
-    @Test
+   @Test
     public void sumaTest(){
         Complex rta=new Complex(4, 3);
         double real1=rta.getReal();

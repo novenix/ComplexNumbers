@@ -23,11 +23,11 @@ public class VectorBasicOp {
         numeroCNuevo = new Complex(rtaR, rtaI);
         return numeroCNuevo;
     }
-     public static VectorFilasColumna MultiplicacionScalarMatriz(ComplexNumber complejo1, VectorFilasColumna lista1){
+     public  VectorComplex MultiEscalVect(Complex complejo1, VectorComplex lista1){
         int size = lista1.GetSize();
-        VectorFilasColumna listaN = new VectorFilasColumna(size);
+        VectorComplex listaN = new VectorComplex(size);
         for(int i = 0; i < size; i++){
-           ComplexNumber numeroN = mathComplex.ProductoComplejos(complejo1, lista1.GetPosition(i));
+           Complex numeroN = BasicOperations.multi(complejo1, lista1.GetPosition(i));
            listaN.AddValue(numeroN);
         }
         return listaN;

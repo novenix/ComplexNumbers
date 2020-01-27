@@ -11,15 +11,16 @@ import java.math.BigDecimal;
  * @author 2137260
  */
 public class BasicOperations {
-    double realResult;
-    double imaginaryResult;
-    Complex result;
+    static double realResult;
+    static double imaginaryResult;
+    static Complex result;
     
     public BasicOperations(){
         
         //Complex Complex2;
     }
-    public Complex suma (Complex n1, Complex n2){
+    public static Complex suma (Complex n1, Complex n2){
+        
         realResult=0;
         imaginaryResult=0;
          double RC1=n1.getReal();
@@ -33,8 +34,8 @@ public class BasicOperations {
         
         return result;
     }   
-    public Complex resta (Complex n1, Complex n2){
-        
+    public static Complex resta (Complex n1, Complex n2){
+         
          double RC1=n1.getReal();
          double IC1=n1.getImaginary();
          double RC2=n2.getReal();
@@ -47,7 +48,7 @@ public class BasicOperations {
         return result;
     }
     
-     public Complex multi (Complex n1, Complex n2){
+     public static Complex multi (Complex n1, Complex n2){
         
          double RC1=n1.getReal();
          double IC1=n1.getImaginary();
@@ -60,14 +61,14 @@ public class BasicOperations {
         
         return result;
     }
-      public Complex div (Complex n1, Complex n2){
+      public static Complex div (Complex n1, Complex n2){
         
          double RC1=n1.getReal();
          double IC1=n1.getImaginary();
          double RC2=n2.getReal();
          double IC2=n2.getImaginary();
          Complex conjuDen=n2.getconjugado();
-         this.multi(n1, conjuDen);
+         multi(n1, conjuDen);
          realResult=RC1*RC2+(IC1*IC2*-1);
          imaginaryResult=(RC1*IC2)+(IC1*RC2);
        

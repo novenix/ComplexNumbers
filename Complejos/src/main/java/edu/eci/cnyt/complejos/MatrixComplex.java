@@ -9,12 +9,12 @@ package edu.eci.cnyt.complejos;
  *
  * @author nicolas.torres-p
  */
-public class MatrizComplex {
+public class MatrixComplex {
     //Atributos 
     int nFilas;
     int nColomnas;   
     Complex [][] matriz;   
-    public MatrizComplex(int row, int col){
+    public MatrixComplex(int row, int col){
         nFilas = row;
         nColomnas = col;
         matriz = new Complex[nFilas][nColomnas];
@@ -27,11 +27,11 @@ public class MatrizComplex {
         return matriz[row][col];
     }
     
-    public MatrizComplex Inverso(){
+    public MatrixComplex Inverso(){
         double vReal;
         double vIma;
         Complex nComple;
-        MatrizComplex matrizNueva = new MatrizComplex(nFilas, nColomnas);
+        MatrixComplex matrizNueva = new MatrixComplex(nFilas, nColomnas);
         
         
         

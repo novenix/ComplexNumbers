@@ -84,10 +84,12 @@ public class ComplexTest {
         BasicOperations op=new BasicOperations();
         
         Complex rtas= op.div(n1, n2);
+        //System.out.println(real1 +" " +ima1+" real1");
         double real2=rtas.getReal();
         double ima2=rtas.getImaginary();
         boolean b1= real1==real2;
         boolean b2= ima1==ima2;
+        //System.out.println(real2 +" " +ima2+" real 2");
        
         assertTrue(real1==real2 && ima1==ima2);
      

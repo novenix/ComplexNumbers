@@ -63,18 +63,23 @@ public class BasicOperations {
     }
       public static Complex div (Complex n1, Complex n2){
         
-         double RC1=n1.getReal();
-         double IC1=n1.getImaginary();
-         double RC2=n2.getReal();
-         double IC2=n2.getImaginary();
-         Complex conjuDen=n2.getconjugado();
-         multi(n1, conjuDen);
-         realResult=RC1*RC2+(IC1*IC2*-1);
-         imaginaryResult=(RC1*IC2)+(IC1*RC2);
-       
-        result = new Complex(realResult, imaginaryResult);
+         Complex numeroCNuevo;
+        double vr1 = n1.getReal();
+        double vr2 = n2.getReal();
+        double vi1 = n1.getImaginary();
+        double vi2 = n2.getImaginary(); 
+        double xNumerador = (vr1*vr2)+(vi1*vi2);
+        double yNumerador = (vr2*vi1) - (vr1*vi2);
+        double deno = Math.pow(vr2, 2) + Math.pow(vi2, 2);
+        double vr = xNumerador / deno;
+        vr = Math.round(vr * 100) / 100d;
+        double valorImaginario = yNumerador/deno;
+        valorImaginario = Math.round(valorImaginario * 100) / 100d;
+        numeroCNuevo = new Complex(vr, valorImaginario);
         
-        return result;
+        return numeroCNuevo;
+       
+      
     }
    
  

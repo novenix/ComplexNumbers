@@ -25,18 +25,8 @@ public class VectorComplex {
         if(ListVector.size() < size){
             ListVector.add(CompNew);
         }        
-    }    
-    
-    public int GetSize(){
-        return size;
-    }
-    
-    
-    public Complex GetPosition(int pos){
-        return ListVector.get(pos);
-    }    
-    
-    public VectorComplex Inverso(){
+    }  
+     public VectorComplex Inverso(){
         VectorComplex listaN = new VectorComplex(size);
         for(int i = 0; i < size; i++){
             Complex complejoRespaldo;
@@ -47,14 +37,25 @@ public class VectorComplex {
             listaN.AddValue(complejoRespaldo);
         }
         return listaN;
-    }    
-    
-    public void Print(){
+    }  
+     public void Print(){
         for(int i = 0; i < size; i++){
-            System.out.println(this.GetPosition(i).getReal()+ " " +this.GetPosition(i).getImaginary());
+            System.out.println(this.getP(i).getReal()+ " " +this.getP(i).getImaginary());
         }
             System.out.println("");
     }
     
+    public int GetSize(){
+        return size;
+    }
+    
+    
+    public Complex getP(int pos){
+        return ListVector.get(pos);
+    }    
+    
+     
+    
+   
     
 }

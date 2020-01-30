@@ -73,7 +73,7 @@ public class MatrixBasicOp {
         for(int i = 0; i < matriz.nColomnas; i++){
             complejoSuma = new Complex(0, 0);
             for(int o = 0; o < matriz.nFilas; o++){
-                complejoN = BasicOperations.multi(vector.GetPosition(o), matriz.GetPosition(o, i));
+                complejoN = BasicOperations.multi(vector.getP(o), matriz.GetPosition(o, i));
                 complejoSuma = BasicOperations.suma(complejoN, complejoSuma);
             }
             vectorN.AddValue(complejoSuma);

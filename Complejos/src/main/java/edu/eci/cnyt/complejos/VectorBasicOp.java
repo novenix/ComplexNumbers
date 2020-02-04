@@ -40,7 +40,7 @@ public class VectorBasicOp {
         }
         return iguales;
     }
-     public  VectorComplex MultiEscalVect(Complex complejo1, VectorComplex lista1){
+     public static  VectorComplex MultiEscalVector(Complex complejo1, VectorComplex lista1){
         int size = lista1.GetSize();
         VectorComplex listaN = new VectorComplex(size);
         for(int i = 0; i < size; i++){

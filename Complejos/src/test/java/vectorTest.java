@@ -55,6 +55,58 @@ public class vectorTest {
         boolean flag = VectorBasicOp.IgualdadVectores(valorRespuesta, valorEsperado);
         assertEquals(flagEsperada, flag);
     }
+      @Test
+    public void testInverso(){
+        boolean flagEsperada = true;
+        VectorComplex valorEsperado = new VectorComplex(4);
+        Complex valor1 = new Complex(-6, -3);
+        valorEsperado.AddValue(valor1);
+        Complex valor2 = new Complex(-2, 2);
+        valorEsperado.AddValue(valor2);
+        Complex valor3 = new Complex(-5, 1);
+        valorEsperado.AddValue(valor3);
+        Complex valor4 = new Complex(12, 0);
+        valorEsperado.AddValue(valor4);
+        VectorComplex vector2 = new VectorComplex(4);
+        valor1 = new Complex(6, 3);
+        vector2.AddValue(valor1);
+        valor2 = new Complex(2, -2);
+        vector2.AddValue(valor2);
+        valor3 = new Complex(5, -1);
+        vector2.AddValue(valor3);
+        valor4 = new Complex(-12, 0);
+        vector2.AddValue(valor4);
+        VectorComplex valorRespuesta = vector2.Inverso();
+        boolean flag = VectorBasicOp.IgualdadVectores(valorRespuesta, valorEsperado);
+        assertEquals(flagEsperada, flag);
+    }
+     @Test
+    public void testMultiplicacionScalar(){
+        boolean flagEsperada = true;
+        VectorComplex valorEsperado = new VectorComplex(4);
+        Complex valor1 = new Complex(12, 21);
+        valorEsperado.AddValue(valor1);
+        Complex valor2 = new Complex(0, 0);
+        valorEsperado.AddValue(valor2);
+        Complex valor3 = new Complex(13, 13);
+        valorEsperado.AddValue(valor3);
+        Complex valor4 = new Complex(12, 8);
+        valorEsperado.AddValue(valor4);
+        Complex valorcomplejo = new Complex(3, 2);
+        VectorComplex vector2 = new VectorComplex(4);
+        valor1 = new Complex(6, 3);
+        vector2.AddValue(valor1);
+        valor2 = new Complex(0, 0);
+        vector2.AddValue(valor2);
+        valor3 = new Complex(5, 1);
+        vector2.AddValue(valor3);
+        valor4 = new Complex(4, 0);
+        vector2.AddValue(valor4);
+        VectorComplex valorRespuesta = VectorBasicOp.MultiEscalVector (valorcomplejo, vector2);
+        boolean flag = VectorBasicOp.IgualdadVectores(valorRespuesta, valorEsperado);
+        assertEquals(flagEsperada, flag);
+    
+    }
  
 
     // TODO add test methods here.

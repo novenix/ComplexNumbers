@@ -140,43 +140,4 @@ public class MatrixBasicOp {
         }
     }
 }
-/*
-   public static Complex InnerProduct(VectorComplex vector1, VectorComplex vector2){
-        Complex n = new Complex(0,0);
-        for(int i = 0; i < vector1.GetSize(); i++){
-            System.out.println("Estos seran los imaginarios a multiplicar"+ vector1.getP(i).getconjugado().getImaginary()+" " + vector2.getP(i).getImaginary());
-            Complex ComplejoN = BasicOperations.multi(vector1.getP(i).getconjugado(), vector2.getP(i));
-            
-            n = BasicOperations.suma(n, ComplejoN);
-            System.out.println(n.getReal()+" "+n.getImaginary());
-        }
-        return n;
-    }
 
-public static double NormComplejos(VectorComplex vector1){
-        double numeroN = 0;
-        for(int i = 0; i < vector1.GetSize(); i++){
-            Complex ComplejoN = BasicOperations.multi(vector1.getP(i).getconjugado(), vector1.getP(i));
-            numeroN = ComplejoN.getReal()+ numeroN;
-        }
-        double retorno = Math.round(Math.sqrt(numeroN) * 10000) / 10000d;
-        return retorno;
-    }
-    
-    public static double DistanceComplejos(ComplexVectorSpace vector1, ComplexVectorSpace vector2){
-        if (vector1.GetSize() == vector2.GetSize()){
-            ComplexVectorSpace vectorN = new ComplexVectorSpace(vector1.GetSize());
-            for(int i = 0; i < vector1.GetSize(); i++){
-                ComplexNumber numeroN = mathComplex.RestaComplejos(vector1.GetPosition(i), vector2.GetPosition(i));
-                vectorN.AddValue(numeroN);
-            }
-            return NormComplejos(vectorN);
-        }
-        else{
-            System.out.println("El tamaño de alguno de los dos vectores es mayor al otro, el valor de respuesta sera cero");
-            return 0;
-        }
-        
-    }
-
-*/

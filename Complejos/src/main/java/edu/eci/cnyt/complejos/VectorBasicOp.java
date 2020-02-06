@@ -72,4 +72,34 @@ public class VectorBasicOp {
         }
         return n;
     }
+     public static double DistanceComplejos(VectorComplex vector1, VectorComplex vector2){
+        if (vector1.GetSize() == vector2.GetSize()){
+            VectorComplex vectorN = new VectorComplex(vector1.GetSize());
+            for(int i = 0; i < vector1.GetSize(); i++){
+                Complex numeroN = BasicOperations.resta(vector1.getP(i), vector2.getP(i));
+                vectorN.AddValue(numeroN);
+            }
+            return Normavect(vectorN);
+        }
+        else{
+            System.out.println("El tamaño de alguno de los dos vectores es mayor al otro, el valor de respuesta sera cero");
+            return 0;
+        }
+        
+    }
+     
+    
+    
+    public static VectorComplex AdjuntaVector(VectorComplex vector){
+        return conjugadaVector(vector);
+    }
+    
+    public static VectorComplex conjugadaVector(VectorComplex vector) {
+        return vector.Conju();
+    }
+    
+    
+    public static Complex AmplitudTransicion(VectorComplex ket1, VectorComplex ket2){
+        return InnerProduct(ket1, ket2);
+    }
 }

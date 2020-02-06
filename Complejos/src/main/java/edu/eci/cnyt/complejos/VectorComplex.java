@@ -54,7 +54,14 @@ public class VectorComplex {
         return ListVector.get(pos);
     }    
     
-     
+      public VectorComplex Conju(){
+        VectorComplex retorno = new VectorComplex(size);
+        for (Complex c : ListVector){
+            retorno.AddValue(c.getconjugado());
+                      
+        }
+        return retorno;
+    }
     
    
     

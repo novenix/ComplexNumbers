@@ -107,7 +107,86 @@ public class vectorTest {
         assertEquals(flagEsperada, flag);
     
     }
- 
+     @Test
+     public void TestInnerProduct()
+     {
+        boolean flagEsperada = true;
+        Complex valorEsperado = new Complex(82,-40);
+        VectorComplex vector1 = new VectorComplex(3);
+        Complex valor1 = new Complex(5, 4);
+        vector1.AddValue(valor1);
+        Complex valor2 = new Complex(3, 2);
+        vector1.AddValue(valor2);
+        Complex valor3 = new Complex(-7, 4);
+        vector1.AddValue(valor3);
+        VectorComplex vector2 = new VectorComplex(3);
+        valor1 = new Complex(6, 3);
+        vector2.AddValue(valor1);
+        valor2 = new Complex(2, 5);
+        vector2.AddValue(valor2);
+        valor3 = new Complex(0, 6);
+        vector2.AddValue(valor3);
+        Complex matrizFinal = VectorBasicOp.InnerProduct(vector1, vector2);
+        boolean flag = BasicOperations.igualdadComplejos(matrizFinal, valorEsperado);
+        assertEquals(flagEsperada, flag);
+     }
+     
+     /*@Test
+     public void TestNormVectoresComplejos()
+     {
+        boolean flagEsperada = true;
+        double valorEsperado = ((double) Math.sqrt(439));
+        VectorComplex vector1 = new VectorComplex(4);
+        Complex valor1 = new Complex(4, 3);
+        vector1.AddValue(valor1);
+        Complex valor2 = new Complex(6, -4);
+        vector1.AddValue(valor2);
+        Complex valor3 = new Complex(12, -7);
+        vector1.AddValue(valor3);
+        Complex valor4 = new Complex(0, 13);
+        vector1.AddValue(valor4);
+        double valorFinal = VectorBasicOp.Normavect(vector1);
+        boolean flag = false;
+        if(valorFinal == valorEsperado){
+            flag = true;
+        }
+        
+        assertEquals(flagEsperada, flag);
+     }
+     */
+     /*
+    @Test
+     public void TestDistanciaVectoresComplejos()
+     {
+        boolean flagEsperada = true;
+        double valorEsperado = ((double) Math.sqrt(439));
+        VectorComplex vector1 = new VectorComplex(4);
+        Complex valor1 = new Complex(6, 6);
+        vector1.AddValue(valor1);
+        Complex valor2 = new Complex(8, -8);
+        vector1.AddValue(valor2);
+        Complex valor3 = new Complex(24, -5);
+        vector1.AddValue(valor3);
+        Complex valor4 = new Complex(0, 10);
+        vector1.AddValue(valor4);
+        VectorComplex vector2 = new VectorComplex(4);
+        valor1 = new Complex(2, 3);
+        vector2.AddValue(valor1);
+        valor2 = new Complex(2, -4);
+        vector2.AddValue(valor2);
+        valor3 = new Complex(12, 2);
+        vector2.AddValue(valor3);
+        valor4 = new Complex(0, -3);
+        vector2.AddValue(valor4);
+        double valorFinal = VectorBasicOp.DistanceComplejos(vector1, vector2);
+        boolean flag = false;
+        if(valorFinal == valorEsperado){
+            flag = true;
+        }
+        
+        assertEquals(flagEsperada, flag);
+     }
+ */
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:

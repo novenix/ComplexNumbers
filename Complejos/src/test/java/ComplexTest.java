@@ -6,6 +6,7 @@
 
 import edu.eci.cnyt.complejos.BasicOperations;
 import edu.eci.cnyt.complejos.Complex;
+import java.util.Objects;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -104,4 +105,26 @@ public class ComplexTest {
         boolean flag = op.iguales(valorEsperado, valorRespuesta);
         assertEquals(flagEsperada, flag);
     }
+    
+    
+    @Test
+    public void TestModulo() {
+        Complex a = new Complex(1.0, -1.0);
+        Double rta = a.Module();
+        assertTrue((Objects.equals(rta, (Double) (Math.sqrt(2)))));
+    }
+
+    @Test
+    public void TestConjugado() {
+        Complex a = new Complex(1.0, -1.0);
+        Complex rta = a.getconjugado();
+        assertTrue(rta.getReal() == 1.0 && rta.getImaginary()== 1.0);
+    }
+    @Test
+    public void TestFase() {
+        Complex a = new Complex(1.0, 1.0);
+        Double rta = a.fase();
+        assertTrue(rta==0.7853981633974483 );
+    }
+    
 }

@@ -116,9 +116,9 @@ public class BasicOperations {
         double valorI1 = tupla1.getImaginary();
         double valorR2 = tupla2.getReal();
         double valorI2 = tupla2.getImaginary();
-         System.out.println(valorR1+" "+ valorR2+" "+valorI1+" "+valorI2);
+        // System.out.println(valorR1+" "+ valorR2+" "+valorI1+" "+valorI2);
         if (valorR1 == valorR2 && valorI2 == valorI1){
-            System.err.println("entra true");
+            //System.err.println("entra true");
             return true;
         }
         else{

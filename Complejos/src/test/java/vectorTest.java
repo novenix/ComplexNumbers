@@ -21,7 +21,7 @@ public class vectorTest {
     public vectorTest() {
     }
     
-     @Test
+    /* @Test
     public void testCalcularSumaVectores() {
         boolean flagEsperada = true;
          VectorComplex valorEsperado = new VectorComplex(4);
@@ -54,7 +54,7 @@ public class vectorTest {
         VectorComplex valorRespuesta = VectorBasicOp.sumaVectores(vector1, vector2);
         boolean flag = VectorBasicOp.IgualdadVectores(valorRespuesta, valorEsperado);
         assertEquals(flagEsperada, flag);
-    }
+    }*/
       @Test
     public void testInverso(){
         boolean flagEsperada = true;

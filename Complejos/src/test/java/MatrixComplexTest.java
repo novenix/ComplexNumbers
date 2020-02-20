@@ -278,7 +278,34 @@ public void testInverso() {
         boolean flag = MatrixBasicOp.IsHermitian(matriz1);
         assertEquals(flagEsperada, flag);
      }  
-     
+      @Test
+    public void testMultiplicacionVectorMatriz() {
+        boolean flagEsperada = true;
+          VectorComplex valorEsperado = new VectorComplex(2);
+        Complex valor1 = new Complex(12, 12);
+        valorEsperado.AddValue(valor1);
+        Complex valor2 = new Complex(16, -8);
+        valorEsperado.AddValue(valor2);
+        VectorComplex vector1 = new VectorComplex(2);
+        valor1 = new Complex(4, 0);
+        vector1.AddValue(valor1);
+        valor2  =  new Complex(4, -2);
+        vector1.AddValue(valor2);
+        MatrixComplex matriz1 = new MatrixComplex(2,2);
+        valor1 = new Complex(-2, 3);
+        matriz1.AddInPosition(0,0,valor1);
+        valor2 = new Complex(4, -2);
+        matriz1.AddInPosition(0,1,valor2);
+        Complex valor3 = new Complex(4, 2);
+        matriz1.AddInPosition(1,0,valor3);
+        Complex valor4 = new Complex(0, 0);
+        matriz1.AddInPosition(1,1,valor4);
+        VectorComplex matrizFinal = MatrixBasicOp.MultiplicacionVectorMatriz(vector1, matriz1);
+        boolean flag = VectorBasicOp.IgualdadVectores(matrizFinal, valorEsperado);
+        //System.out.println(VectorBasicOp.IgualdadVectores(matrizFinal, valorEsperado));
+        //System.out.println(flag);
+        assertEquals(flagEsperada, flag);
+    }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //

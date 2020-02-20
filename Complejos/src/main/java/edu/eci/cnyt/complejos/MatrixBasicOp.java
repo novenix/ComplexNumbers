@@ -68,15 +68,26 @@ public class MatrixBasicOp {
         //accion matriz en vector
         public static VectorComplex MultiplicacionVectorMatriz(VectorComplex vector, MatrixComplex matriz){
         VectorComplex vectorN = new VectorComplex(matriz.nColomnas);
+            System.out.println(vectorN);
         Complex complejoN;
         Complex complejoSuma;
         for(int i = 0; i < matriz.nColomnas; i++){
             complejoSuma = new Complex(0, 0);
+            System.out.println(i);
             for(int o = 0; o < matriz.nFilas; o++){
+                System.out.println(o);
+                vector.getP(o);
+                 System.out.println("antes");
+                 matriz.GetPosition(o, i);
+                  System.out.println("despues");
+                   System.out.println(o);
+                   
                 complejoN = BasicOperations.multi(vector.getP(o), matriz.GetPosition(o, i));
                 complejoSuma = BasicOperations.suma(complejoN, complejoSuma);
+                
             }
             vectorN.AddValue(complejoSuma);
+            System.out.println(complejoSuma);
         }
         return  vectorN;
     }

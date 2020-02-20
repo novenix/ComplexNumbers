@@ -48,7 +48,7 @@ Producto tensor de dos matrices/vectores
 ```
 
 ## construido con 
-Java Version 8 Update 201 Usado para desarrollar la libreria.
+Java Version 8  Usado para desarrollar la libreria.
 ## Authors
 
 * **Nicolas Torres** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)

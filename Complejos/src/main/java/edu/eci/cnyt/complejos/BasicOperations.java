@@ -94,8 +94,8 @@ public class BasicOperations {
         IC1 = Math.pow(IC1, 2);
         double valorC = RC1 + IC1;
         double valorPfea = Math.sqrt(valorC);
-        System.out.println(valorPfea);
-        System.out.println(Tetha);
+        //System.out.println(valorPfea);
+        //System.out.println(Tetha);
         numeroCNuevo = new Complex(valorPfea, Tetha);
         return numeroCNuevo;
     }
@@ -117,7 +117,12 @@ public class BasicOperations {
         double valorR2 = tupla2.getReal();
         double valorI2 = tupla2.getImaginary();
         // System.out.println(valorR1+" "+ valorR2+" "+valorI1+" "+valorI2);
-        if (valorR1 == valorR2 && valorI2 == valorI1){
+    
+        if (   Math.round(valorR1) ==  Math.round(valorR2) && Math.round(valorI2) == Math.round(valorI1)){
+            //System.err.println("entra true");
+            return true;
+        }
+        else if (  valorR1 ==  valorR2 && valorI2 == valorI1){
             //System.err.println("entra true");
             return true;
         }

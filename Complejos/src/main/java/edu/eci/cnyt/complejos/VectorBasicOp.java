@@ -77,6 +77,7 @@ public class VectorBasicOp {
             VectorComplex vectorN = new VectorComplex(vector1.GetSize());
             for(int i = 0; i < vector1.GetSize(); i++){
                 Complex numeroN = BasicOperations.resta(vector1.getP(i), vector2.getP(i));
+                //System.out.println(numeroN);
                 vectorN.AddValue(numeroN);
             }
             return Normavect(vectorN);
@@ -99,7 +100,4 @@ public class VectorBasicOp {
     }
     
     
-    public static Complex AmplitudTransicion(VectorComplex ket1, VectorComplex ket2){
-        return InnerProduct(ket1, ket2);
-    }
 }

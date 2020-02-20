@@ -56,6 +56,7 @@ public class MatrixComplexTest {
         boolean flag = MatrixBasicOp.IgualMatrix(matrizFinal, valorEsperado);
         assertEquals(flagEsperada, flag);
     }
+     @Test
 public void testInverso() {
         boolean flagEsperada = true;
         MatrixComplex valorEsperado = new MatrixComplex(2,2);
@@ -106,6 +107,32 @@ public void testInverso() {
         boolean flag = MatrixBasicOp.IgualMatrix(matrizFinal, valorEsperado);
         assertEquals(flagEsperada, flag);
     }
+    @Test
+     public void TestUnitariaMatriz()
+     {
+        boolean flagEsperada = true;
+        MatrixComplex matriz1 = new MatrixComplex(3,3);
+        Complex valor1 = new Complex(5, 0);
+        matriz1.AddInPosition(0,0,valor1);
+        Complex valor2 = new Complex(4, 5);
+        matriz1.AddInPosition(0,1,valor2);
+        Complex valor3 = new Complex(6, -16);
+        matriz1.AddInPosition(0,2,valor3);
+        Complex valor4 = new Complex(4, -5);
+        matriz1.AddInPosition(1,0,valor4);
+        Complex valor5 = new Complex(13, 0);
+        matriz1.AddInPosition(1,1,valor5);
+        Complex valor6 = new Complex(7, 0);
+        matriz1.AddInPosition(1,2,valor6);
+        Complex valor7 = new Complex(6, 16);
+        matriz1.AddInPosition(2,0,valor7);
+        Complex valor8 = new Complex(7, 0);
+        matriz1.AddInPosition(2,1,valor8);
+        Complex valor9 = new Complex(-2.1, 0);
+        matriz1.AddInPosition(2,2,valor9);        
+        boolean flag = MatrixBasicOp.IsHermitian(matriz1);
+        assertEquals(flagEsperada, flag);
+     }  
     @Test
     public void testMultiplicacionMatrices() {
         boolean flagEsperada = true;
@@ -251,6 +278,7 @@ public void testInverso() {
         boolean flag = MatrixBasicOp.IsHermitian(matriz1);
         assertEquals(flagEsperada, flag);
      }  
+     
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //

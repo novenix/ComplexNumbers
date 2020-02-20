@@ -21,7 +21,7 @@ public class vectorTest {
     public vectorTest() {
     }
     
-    /* @Test
+     @Test
     public void testCalcularSumaVectores() {
         boolean flagEsperada = true;
          VectorComplex valorEsperado = new VectorComplex(4);
@@ -54,7 +54,7 @@ public class vectorTest {
         VectorComplex valorRespuesta = VectorBasicOp.sumaVectores(vector1, vector2);
         boolean flag = VectorBasicOp.IgualdadVectores(valorRespuesta, valorEsperado);
         assertEquals(flagEsperada, flag);
-    }*/
+    }
       @Test
     public void testInverso(){
         boolean flagEsperada = true;
@@ -131,10 +131,9 @@ public class vectorTest {
         assertEquals(flagEsperada, flag);
      }
      
-     /*@Test
-     public void TestNormVectoresComplejos()
-     {
-        boolean flagEsperada = true;
+     @Test
+     public void TestNormVectoresComplejos(){
+          boolean flagEsperada = true;
         double valorEsperado = ((double) Math.sqrt(439));
         VectorComplex vector1 = new VectorComplex(4);
         Complex valor1 = new Complex(4, 3);
@@ -147,17 +146,50 @@ public class vectorTest {
         vector1.AddValue(valor4);
         double valorFinal = VectorBasicOp.Normavect(vector1);
         boolean flag = false;
-        if(valorFinal == valorEsperado){
+        //System.out.println(flagEsperada);
+        //System.out.println(flag);
+         //System.out.println(Math.round(valorFinal));
+         // System.out.println(Math.round(valorEsperado));
+     
+        if(Math.round(valorFinal) ==  Math.round(valorEsperado)){
             flag = true;
         }
         
         assertEquals(flagEsperada, flag);
      }
-     */
-     /*
+     @Test
+      public void TestConjugadaVectoresComplejos(){
+         //System.out.println("lolazo");
+        boolean flagEsperada = true;
+        VectorComplex vect1 = new VectorComplex(2);
+        Complex valor1 = new Complex(5, -1);
+        vect1.AddValue(valor1);
+        Complex valor2 = new Complex(1, 0);
+        vect1.AddValue(valor2);
+                 
+        VectorComplex vector2 = new VectorComplex(2);
+        Complex valor6 = new Complex(5, 1);
+        vector2.AddValue(valor6);
+        Complex valor7 = new Complex(1, 0);
+        vector2.AddValue(valor7);
+       
+        VectorComplex valorFinal = VectorBasicOp.conjugadaVector(vect1);
+        
+        boolean flag = false;
+       
+        //System.out.println(VectorBasicOp.IgualdadVectores(valorFinal,vector2));
+            
+        if(VectorBasicOp.IgualdadVectores(valorFinal,vector2)){
+            flag = true;
+        }
+        
+        assertEquals(flagEsperada, flag);
+     }
+     
     @Test
      public void TestDistanciaVectoresComplejos()
      {
+       
         boolean flagEsperada = true;
         double valorEsperado = ((double) Math.sqrt(439));
         VectorComplex vector1 = new VectorComplex(4);
@@ -180,13 +212,46 @@ public class vectorTest {
         vector2.AddValue(valor4);
         double valorFinal = VectorBasicOp.DistanceComplejos(vector1, vector2);
         boolean flag = false;
-        if(valorFinal == valorEsperado){
+         //System.out.println(flagEsperada);
+        //System.out.println(flag);
+         //System.out.println(Math.round(valorFinal));
+          //System.out.println(Math.round(valorEsperado));
+        if(Math.round(valorFinal) == Math.round(valorEsperado)){
             flag = true;
         }
         
         assertEquals(flagEsperada, flag);
      }
- */
+       @Test
+      public void TestAdjuntaVectoresComplejos(){
+         //System.out.println("lolazo");
+        boolean flagEsperada = true;
+        VectorComplex vect1 = new VectorComplex(2);
+        Complex valor1 = new Complex(5, -1);
+        vect1.AddValue(valor1);
+        Complex valor2 = new Complex(1, 0);
+        vect1.AddValue(valor2);
+                 
+        VectorComplex vector2 = new VectorComplex(2);
+        Complex valor6 = new Complex(5, 1);
+        vector2.AddValue(valor6);
+        Complex valor7 = new Complex(1, 0);
+        vector2.AddValue(valor7);
+       
+        VectorComplex valorFinal = VectorBasicOp.AdjuntaVector(vect1);
+        
+        boolean flag = false;
+       
+        //System.out.println(VectorBasicOp.IgualdadVectores(valorFinal,vector2));
+            
+        if(VectorBasicOp.IgualdadVectores(valorFinal,vector2)){
+            flag = true;
+        }
+        
+        assertEquals(flagEsperada, flag);
+     }
+      
+
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:

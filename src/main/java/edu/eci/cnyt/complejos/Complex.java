@@ -31,8 +31,9 @@ public class Complex {
         return respuesta;        
     }
         public double fase(){
-        double division = imaginaryNumber/realNumber;
-        double tangenteH = Math.atan(division);
+       double tangenteH = Math.atan2(imaginaryNumber,realNumber);
+        //double division = imaginaryNumber/realNumber;
+        //double tangenteH = Math.atan(division);
         return tangenteH;
     }
 }

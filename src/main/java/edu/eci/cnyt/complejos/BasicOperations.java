@@ -107,6 +107,9 @@ public class BasicOperations {
         if (r2 == r1 && i1 == i2){
             return true;
         }
+        /*if(tupla1.equals(tupla2)){
+            return true;
+        }*/
         else{
             return false;
         }
@@ -117,7 +120,9 @@ public class BasicOperations {
         double valorR2 = tupla2.getReal();
         double valorI2 = tupla2.getImaginary();
         // System.out.println(valorR1+" "+ valorR2+" "+valorI1+" "+valorI2);
-    
+    /*if(tupla1.equals(tupla2)){
+            return true;
+        }*/
         if (   Math.round(valorR1) ==  Math.round(valorR2) && Math.round(valorI2) == Math.round(valorI1)){
             //System.err.println("entra true");
             return true;

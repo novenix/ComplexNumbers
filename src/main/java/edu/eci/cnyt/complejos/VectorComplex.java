@@ -13,10 +13,14 @@ import java.util.List;
 
 public class VectorComplex {
     
-    //Atributos
-    List<Complex> ListVector = new ArrayList<Complex>();
-    int size;
     
+    List<Complex> ListVector = new ArrayList<Complex>();
+     private ArrayList<Complex> vec;
+    int size;
+    public VectorComplex(ArrayList<Complex> vec){
+        this.vec=vec;
+    }
+
     public VectorComplex(int sizeN){
         size = sizeN;
     }
@@ -52,7 +56,14 @@ public class VectorComplex {
     
     public Complex getP(int pos){
         return ListVector.get(pos);
-    }    
+    }  
+   public void setVec(ArrayList<Complex> vec) {
+        this.vec = vec;
+    }
+
+    public ArrayList<Complex> getVec() {
+        return vec;
+    }
     
       public VectorComplex Conju(){
         VectorComplex retorno = new VectorComplex(size);

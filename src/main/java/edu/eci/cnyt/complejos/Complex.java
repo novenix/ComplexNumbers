@@ -4,6 +4,12 @@ import java.math.BigDecimal;
 public class Complex {
 	private double realNumber;
 	private double imaginaryNumber;
+        private Double  real;
+        private Double  imaginrio;
+        public Complex(Double real, Double imaginrio){
+        this.real=real;
+        this.imaginrio=imaginrio;
+    }
 	public Complex(double real,double imaginary){
 		realNumber=real;
 		imaginaryNumber=imaginary;

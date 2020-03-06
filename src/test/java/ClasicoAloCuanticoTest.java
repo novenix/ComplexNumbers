@@ -12,13 +12,16 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import sun.swing.plaf.windows.ClassicSortArrowIcon;
 import edu.eci.cnyt.complejos.*;
+import java.text.DecimalFormat;
+import java.util.Arrays;
+import java.util.HashMap;
 /**
  *
  * @author nicolas.torres-p
  */
-public class ClasicoAloCuantico {
+public class ClasicoAloCuanticoTest {
     
-    public ClasicoAloCuantico() {
+    public ClasicoAloCuanticoTest() {
     }
      @Test
     public void canicas_con_coeficiente_booleanos() {
@@ -58,7 +61,7 @@ public class ClasicoAloCuantico {
         }
         assertArrayEquals(r, resp2);
         System.out.println(" ");
-        ComplejoLib.graficarEstado(r,"canicas_con_coeficiente_booleanos_quiz");
+        ClassicAndCuantic.graficarEstado(r,"canicas_con_coeficiente_booleanos_quiz");
     }
 
     @Test
@@ -76,7 +79,7 @@ public class ClasicoAloCuantico {
         probabilidades.put("2-7", 0.33);
         Double[][] m = ClassicAndCuantic.getMatrizXmatriz(2, 5, probabilidades);
         Double[] v2 = {1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
-        Double[] r = ClassicAndCuantic.MiltiRendClásico(m, v2, 1);
+        Double[] r = ClassicAndCuantic.MultiRendClásico(m, v2, 1);
         for (Double e : r) {
             System.out.println(e);
         }
@@ -99,14 +102,14 @@ public class ClasicoAloCuantico {
         probabilidades.put("2-7", new Complex(1 / Math.sqrt(6),-1 / Math.sqrt(6)));
         Double[][] m = ClassicAndCuantic.getMatrizXmatrizCuantico(2, 5, probabilidades);
         Double[] v2 = {1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
-        Double[] r=ClassicAndCuantic.MiltiRendClásico(m,v2,1);
+        Double[] r=ClassicAndCuantic.MultiRendClásico(m,v2,1);
         for(Double[] e: m){
          System.out.println(Arrays.toString(e));
          }
         for(Double e: r){
          System.out.println(e);
          }
-        ComplejoLib.graficarEstado(r,"Multiples_Rendijas_Experiemnto_Cuantico");
+        ClassicAndCuantic.graficarEstado(r,"Multiples_Rendijas_Experiemnto_Cuantico");
     }
     @Test
     public void graficar() {
@@ -128,9 +131,5 @@ public class ClasicoAloCuantico {
     public void tearDown() {
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+   
 }

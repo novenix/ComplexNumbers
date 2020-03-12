@@ -18,7 +18,7 @@ only to run Tests:
 in terminal in Complejos folder:
 
 ```
-nvm package
+mvn package
 ```
 
 

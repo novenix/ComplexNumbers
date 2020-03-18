@@ -10,7 +10,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import sun.swing.plaf.windows.ClassicSortArrowIcon;
+
 import edu.eci.cnyt.complejos.*;
 import java.text.DecimalFormat;
 import java.util.Arrays;
@@ -27,7 +27,7 @@ public class ClasicoAloCuanticoTest {
     public void canicas_con_coeficiente_booleanos() {
         System.out.println("---------Canicas_Con_Coeficiente_Booleanos Test---------");
         System.out.println(" ");
-        System.out.println("-------Libro Ejemplo-----------");
+        System.out.println("------- Ejemplo del libro -----------");
         int[][] m = {{0, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 0},
         {0, 1, 0, 0, 0, 1},
@@ -44,7 +44,7 @@ public class ClasicoAloCuanticoTest {
         Double[] resp = {0.0, 0.0, 12.0, 5.0, 1.0, 9.0};
         assertArrayEquals(r, resp);
         System.out.println(" ");
-        System.out.println("-------Quiz pregunta 2------------");
+        System.out.println("------- pregunta 2 Quiz------------");
         int[][] m2 = {{0, 0, 0, 0, 0, 0},
         {0, 0, 0, 1, 0, 0},
         {0, 1, 0, 0, 0, 1},

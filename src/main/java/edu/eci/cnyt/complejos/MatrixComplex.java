@@ -23,7 +23,7 @@ public class MatrixComplex {
     public void AddInPosition(int row, int col,Complex valor){
         
         matriz[row][col] = valor;
-        System.out.println( valor.getReal());
+        //System.out.println( valor.getReal());
     }
     public Complex GetPosition(int row, int col){
         return matriz[row][col];

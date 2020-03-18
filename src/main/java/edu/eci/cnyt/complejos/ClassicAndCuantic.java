@@ -47,7 +47,9 @@ public class ClassicAndCuantic {
         return (a.getReal() * a.getReal()) + (a.getImaginary() * a.getImaginary());
     }
 
-   
+   public static VectorComplex transpuestaVector(VectorComplex v) {
+        return v;
+    }
     
     public static Matriz productoMatrices(Complex[][] m1, Complex[][] m2) {
         Complex sum;
@@ -63,14 +65,17 @@ public class ClassicAndCuantic {
         }
         return new Matriz(r);
     }
-
-    /**
-     * Este metodo permite calcular la accion entre una matriz y un vector.
-     *
-     * @param m1 //Complejo[][]
-     * @param v //Complejo[]
-     * @return Vector
-     */
+    public static Complex productoInternoVectores(VectorComplex v1, VectorComplex v2) {
+            Complex sum = new Complex(0.0, 0.0);
+            for (int i = 0; i < v1.getVec().size(); i++) {
+                sum = suma(sum, multiplicacion(v1.getVec().get(i), v2.getVec().get(i)));
+            }
+            return sum;
+        }
+     public static Complex Conjugado(Complex a) {
+        return new Complex(a.getReal(), a.getImaginary()* -1);
+    }
+    
     public static VectorComplex accionMatrisVector(Complex[][] m1, Complex[] v) {
         Complex sum;
         Complex r[] = new Complex[v.length];
@@ -105,6 +110,14 @@ public class ClassicAndCuantic {
             r = multiplicacionMatrisVector(m1, r);
         }
         return r;
+    }
+    public static VectorComplex conjugadoVector(VectorComplex v) {
+        ArrayList<Complex> vectorResultado = new ArrayList<Complex>();
+        for (int i = 0; i < v.getVec().size(); i++) {
+            vectorResultado.add(Conjugado(v.getVec().get(i)));
+        }
+        return new VectorComplex(vectorResultado);
+
     }
 
     public static Double[][] getMatrizXmatrizCuantico(int rendijas, int objetivos, HashMap<String, Complex> probabilidades) {
@@ -173,6 +186,9 @@ public class ClassicAndCuantic {
         }
         return r;
     }
+    public static VectorComplex adjuntaVector(VectorComplex v) {
+        return conjugadoVector(transpuestaVector(v));
+    }
 
     private static Double[] multiplicacionMatrisVector(int[][] m1, Double[] v) {
         Double sum;
@@ -186,7 +202,9 @@ public class ClassicAndCuantic {
         }
         return r;
     }
-
+public static Double Modulo(Complex a) {
+        return Math.sqrt((a.getReal() * a.getReal()) + (a.getImaginary()* a.getImaginary()));
+    }
     private static Double[] multiplicacionMatrisVectorDouble(Double[][] m1, Double[] v) {
         Double sum;
         Double r[] = new Double[v.length];
@@ -236,6 +254,41 @@ public class ClassicAndCuantic {
             System.out.println("error" + e);
         }
 
+    }
+    
+    
+    
+    public static Double SistemaCuanticoParticulaDeUnalínea(Complex[] linea,int posicion) {
+            Double suma=0.0;
+            for(Complex e: linea){
+                suma=suma+Mod(e);
+            }
+            Double estand=Math.sqrt(suma);
+            Double prob=Mod(linea[posicion])/(estand*estand);
+            return prob;
+        }
+    public static VectorComplex normali(VectorComplex a){
+
+        ArrayList<Complex>b=a.getVec();    
+        Double magnitud=0.0;
+        for(int i=0;i<b.size();i++){
+            magnitud+=Math.pow(Modulo(b.get(i)),2);
+        }
+        magnitud=Math.sqrt(magnitud);
+
+        for(int i=0;i<b.size();i++){
+            Complex d=new Complex(b.get(i).getReal()/magnitud,b.get(i).getImaginary()/magnitud); 
+            b.set(i, d);
+        }
+        return new VectorComplex(b);   
+    }
+    public static Complex transitarvectorAotro(VectorComplex a,VectorComplex b){
+        VectorComplex vn2=normali(adjuntaVector(a));
+        VectorComplex vn1=normali(b);
+        ArrayList<Complex>v1=vn1.getVec();
+        ArrayList<Complex>v2=vn2.getVec();
+
+        return productoInternoVectores(new VectorComplex(v1),new VectorComplex(v2));
     }
    
 }
